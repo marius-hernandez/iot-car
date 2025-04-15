@@ -78,7 +78,7 @@ void setUpPinModes()
 void setup()
 {
   setUpPinModes();
-  Dabble.begin("MyBluetoothCar"); 
+  Dabble.begin("ninetendo"); 
 }
 
 void loop()
@@ -88,26 +88,26 @@ void loop()
   Dabble.processInput();
   if (GamePad.isUpPressed())
   {
-    rightMotorSpeed = MAX_MOTOR_SPEED;
-    leftMotorSpeed = MAX_MOTOR_SPEED;
+    rightMotorSpeed = -MAX_MOTOR_SPEED;
+    leftMotorSpeed = -MAX_MOTOR_SPEED;
   }
 
   if (GamePad.isDownPressed())
   {
-    rightMotorSpeed = -MAX_MOTOR_SPEED;
-    leftMotorSpeed = -MAX_MOTOR_SPEED;
+    rightMotorSpeed = MAX_MOTOR_SPEED;
+    leftMotorSpeed = MAX_MOTOR_SPEED;
   }
 
   if (GamePad.isLeftPressed())
   {
-    rightMotorSpeed = MAX_MOTOR_SPEED;
-    leftMotorSpeed = -MAX_MOTOR_SPEED;
+    rightMotorSpeed = -MAX_MOTOR_SPEED;
+    leftMotorSpeed = MAX_MOTOR_SPEED;
   }
 
   if (GamePad.isRightPressed())
   {
-    rightMotorSpeed = -MAX_MOTOR_SPEED;
-    leftMotorSpeed = MAX_MOTOR_SPEED;
+    rightMotorSpeed = MAX_MOTOR_SPEED;
+    leftMotorSpeed = -MAX_MOTOR_SPEED;
   }
 
   rotateMotor(rightMotorSpeed, leftMotorSpeed);
